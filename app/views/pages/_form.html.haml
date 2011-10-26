@@ -7,13 +7,10 @@
           %li= msg
 
   .field
-    = f.label :name
+    = f.label 'Charity Name:'
     = f.text_field :name
   .field
-    = f.label :slug
-    = f.text_field :slug
-  .field
-    = f.label :google_checkout_merchant_id
+    = f.label "Charity's Google Checkout Merchant ID:"
     = f.text_field :google_checkout_merchant_id
   .actions
     = f.submit 'Save'

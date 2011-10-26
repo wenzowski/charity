@@ -7,6 +7,19 @@
   %b Google checkout merchant:
   = @page.google_checkout_merchant_id
 
+%p
+  %b Public page:
+  = link_to @page.name, "#{request.protocol}#{request.host}:#{request.port}/#{@page.slug}"
+
+%p
+  %b QR Code:
+  #page_qr
+  :javascript
+    $(function() {
+      $('div#page_qr').qrcode("#{request.protocol}#{request.host}:#{request.port}/#{@page.slug}");
+    });
+
+
 = link_to 'Edit', edit_page_path(@page)
 \|
 = link_to 'Back', pages_path

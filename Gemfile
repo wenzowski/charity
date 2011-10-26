@@ -26,3 +26,8 @@ gem "guard-livereload", ">= 0.3.0", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
 gem "guard-cucumber", ">= 0.6.1", :group => :development
 gem "devise", ">= 1.4.5"
+
+# JavasScript libs
+gem 'jquery-rails'
+gem 'modernizr-rails'
+gem 'rails-backbone', git: 'git://github.com/christopherhein/backbone-rails.git', branch: 'develop'

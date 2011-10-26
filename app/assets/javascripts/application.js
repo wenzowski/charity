@@ -4,4 +4,11 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
+//= require modernizr
+//= require jquery
+//= require jquery.qrcode.min
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
 //= require_tree .
