@@ -1,3 +1,6 @@
-%h3 Home
-- @users.each do |user|
-  %p User: #{link_to user.name, user}
+%h1 Charity
+%p This app allows charities to create donation page QR codes for their organization.
+
+%h3 Some charities in the system:
+- @pages.each do |page|
+  %p Page: #{link_to page.name, "/#{page.slug}"}
