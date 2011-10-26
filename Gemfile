@@ -1,6 +1,6 @@
 require 'rbconfig'
 source 'http://rubygems.org'
-gem 'rack', '1.3.3'
+gem 'rack', '1.3.5'
 gem 'rails', '3.1.1'
 gem 'pg', :require => 'pg'
 group :assets do
