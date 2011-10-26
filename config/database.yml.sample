@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  database: charity_development
+  encoding: utf8
+  pool: 5
+
+test: &test
+  adapter: postgresql
+  database: charity_test
+  encoding: utf8
+  pool: 5
+
+cucumber:
+  <<: *test

@@ -1,8 +1,9 @@
 require 'rbconfig'
 HOST_OS = Config::CONFIG['host_os']
 source 'http://rubygems.org'
+gem 'rack', '1.3.5'
 gem 'rails', '3.1.1'
-gem 'sqlite3'
+gem 'pg', :require => 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
