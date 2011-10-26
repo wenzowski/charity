@@ -1,3 +1,268 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+    html, body, h1, form, fieldset, legend, ol, li {
+    margin: 0;
+    padding: 0;
+    }
+    body {
+    background: #ffffff;
+    color: #111111;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: 20px;
+    }
+
+// -- Non Google Checkout
+
+    form#payment {
+    background: #00acff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    }
+
+    form#payment fieldset {
+    border: none;
+    margin-bottom: 10px;
+    }
+    form#payment fieldset:last-of-type {
+    margin-bottom: 0;
+    }
+
+    form#payment legend {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 1px #c0d576;
+    }
+
+    form#payment > fieldset > legend:before {
+    content: "Step " counter(fieldsets) ": ";
+    counter-increment: fieldsets;
+    }
+
+    form#payment fieldset fieldset legend {
+    color: #111111;
+    font-size: 13px;
+    font-weight: normal;
+    padding-bottom: 0;
+    }
+
+    form#payment ol li {
+    background: #b9cf6a;
+    background: rgba(255,255,255,.3);
+    border-color: #e3ebc3;
+    border-color: rgba(255,255,255,.6);
+    border-style: solid;
+    border-width: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    line-height: 30px;
+    list-style: none;
+    padding: 5px 10px;
+    margin-bottom: 2px;
+    }
+    form#payment ol ol li {
+    background: none;
+    border: none;
+    float: left;
+    }
+    form#payment label {
+    float: left;
+    font-size: 13px;
+    width: 110px;
+    }
+    form#payment fieldset fieldset label {
+    background:none no-repeat left 50%;
+    line-height: 20px;
+    padding: 0 0 0 30px;
+    width: auto;
+    }
+    form#payment label[for=visa] {
+    background-image: url(visa.gif);
+    }
+    form#payment label[for=amex] {
+    background-image: url(amex.gif);
+    }
+    form#payment label[for=mastercard] {
+    background-image: url(mastercard.gif);
+    }
+    form#payment fieldset fieldset label:hover {
+    cursor: pointer;
+    }
+
+    form#payment input:not([type=radio]),
+    form#payment textarea {
+    background: #ffffff;
+    border: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    font: italic 13px Georgia, "Times New Roman", Times, serif;
+    outline: none;
+    padding: 5px;
+    width: 200px;
+    }
+    form#payment input:not([type=submit]):focus,
+    form#payment textarea:focus {
+    background: #eaeaea;
+    }
+    form#payment input[type=radio] {
+    float: left;
+    margin-right: 5px;
+    }
+
+    form#payment button {
+    background: #3399aa;
+    border: none;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    display: block;
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    margin: auto;
+    padding: 7px 25px;
+    text-shadow: 0 1px 1px #000000;
+    text-transform: uppercase;
+    }
+    form#payment button:hover {
+    background: #1e2506;
+    cursor: pointer;
+    }
+    
+//Googel checkout
+
+    form#BB_BuyButtonForm {
+    background: #00acff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    }
+
+    form#BB_BuyButtonForm fieldset {
+    border: none;
+    margin-bottom: 10px;
+    }
+    form#BB_BuyButtonForm fieldset:last-of-type {
+    margin-bottom: 0;
+    }
+
+    form#BB_BuyButtonForm legend {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 1px #c0d576;
+    }
+
+    form#BB_BuyButtonForm > fieldset > legend:before {
+    content: "Step " counter(fieldsets) ": ";
+    counter-increment: fieldsets;
+    }
+
+    form#BB_BuyButtonForm fieldset fieldset legend {
+    color: #111111;
+    font-size: 13px;
+    font-weight: normal;
+    padding-bottom: 0;
+    }
+
+    form#BB_BuyButtonForm ol li {
+    background: #b9cf6a;
+    background: rgba(255,255,255,.3);
+    border-color: #e3ebc3;
+    border-color: rgba(255,255,255,.6);
+    border-style: solid;
+    border-width: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    line-height: 30px;
+    list-style: none;
+    padding: 5px 10px;
+    margin-bottom: 2px;
+    }
+    form#BB_BuyButtonForm ol ol li {
+    background: none;
+    border: none;
+    float: left;
+    }
+    form#BB_BuyButtonForm label {
+    float: left;
+    font-size: 13px;
+    width: 50px;
+    }
+    form#BB_BuyButtonForm fieldset fieldset label {
+    background:none no-repeat left 50%;
+    line-height: 20px;
+    padding: 0 0 0 30px;
+    width: auto;
+    }
+    form#BB_BuyButtonForm label[for=visa] {
+    background-image: url(visa.gif);
+    }
+    form#BB_BuyButtonForm label[for=amex] {
+    background-image: url(amex.gif);
+    }
+    form#BB_BuyButtonForm label[for=mastercard] {
+    background-image: url(mastercard.gif);
+    }
+    form#BB_BuyButtonForm fieldset fieldset label:hover {
+    cursor: pointer;
+    }
+
+    form#BB_BuyButtonForm input:not([type=radio]),
+    form#BB_BuyButtonForm textarea {
+    background: #ffffff;
+    border: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    font: italic 13px Georgia, "Times New Roman", Times, serif;
+    outline: none;
+    padding: 5px;
+    width: 150px;
+    }
+    form#BB_BuyButtonForm input:not([type=submit]):focus,
+    form#BB_BuyButtonForm textarea:focus {
+    background: #eaeaea;
+    }
+    form#BB_BuyButtonForm input[type=radio] {
+    float: left;
+    margin-right: 5px;
+    }
+
+    form#BB_BuyButtonForm button {
+    background: #3399aa;
+    border: none;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    display: block;
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    margin: auto;
+    padding: 7px 25px;
+    text-shadow: 0 1px 1px #000000;
+    text-transform: uppercase;
+    }
+    form#BB_BuyButtonForm button:hover {
+    background: #1e2506;
+    cursor: pointer;
+    }

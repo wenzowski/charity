@@ -1,15 +1,102 @@
-%p#notice= notice
+%html
+  %head
+    :javascript
+      function validateAmount(amount){
+      		if(amount.value.match( /^[0-9]+(\.([0-9]+))?$/)){
+      			return true;
+      		}else{
+      			alert('You MUST enter a valid donation.');
+      			amount.focus();
+      			return false;
+      		}
+      	}
+  
+  %body
+    - if @page
+      %p#payment= notice
 
-%p
-  %b Name:
-  = @page.name
-%p
-  %b Slug:
-  = @page.slug
-%p
-  %b Google checkout merchant:
-  = @page.google_checkout_merchant_id
+      %b 
+        %u
+          %legend Organization Detals
+      %p
+        %b Name:
+        = @page.name
+      %p
+        %b Slug:
+        = @page.slug
+      %p
+        %b Google checkout merchant:
+        = @page.google_checkout_merchant_id
 
-= link_to 'Edit', edit_page_path(@page)
-\|
-= link_to 'Back', pages_path
+      = link_to 'Edit', edit_page_path(@page)
+      \|
+      = link_to 'Back', pages_path  
+      
+      %p
+        %form#BB_BuyButtonForm{:action => "https://sandbox.google.com/checkout/cws/v2/Donations/#{@page.google_checkout_merchant_id}/checkoutForm", :method => "post", :name => "BB_BuyButtonForm", :onSubmit => "return validateAmount(this.item_price_1)", :target => "_top"}
+          %fieldset
+            %legend Donate Via Google Checkout
+            %ol
+              %li
+                %input{:name => "item_name_1", :type => "hidden", :value => "Donate to Charity IO"}/
+                %input{:name => "item_description_1", :type => "hidden", :value => "Help support Charities around Montreal!"}/
+                %input{:name => "item_quantity_1", :type => "hidden", :value => "1"}/
+                %input{:name => "item_currency_1", :type => "hidden", :value => "USD"}/
+                %input{:name => "item_is_modifiable_1", :type => "hidden", :value => "true"}/
+                %input{:name => "item_min_price_1", :type => "hidden", :value => "0.01"}/
+                %input{:name => "item_max_price_1", :type => "hidden", :value => "25000.0"}/
+                %input{:name => "_charset_", :type => "hidden", :value => "utf-8"}/
+                %table{:cellpadding => "5", :cellspacing => "0", :width => "1%"}
+                  %tr
+                    %td{:align => "right", :nowrap => "nowrap", :width => "1%"}
+                      \$
+                      %input#item_price_1{:name => "item_price_1", :onfocus => "this.style.color='black'; this.value='';", :size => "11", :style => "color:grey;", :type => "text", :value => "Enter Amount"}/
+                    %td{:align => "left", :width => "1%"}
+                      %input{:alt => "Donate", :src => "https://sandbox.google.com/checkout/buttons/donateNow.gif?merchant_id=#{@page.google_checkout_merchant_id}&w=115&h=50&style=trans&variant=text&loc=en_US", :type => "image"}/
+      %p
+      %form#payment
+        %fieldset
+          %legend Share Your Support With Friends (Coming Soon!)
+          %ol
+            %li
+              %label{:for => "name"} Name
+              %input#name{:autofocus => "", :name => "name", :placeholder => "First and last name", :required => "", :type => "text"}
+            %li
+              %label{:for => "email"} Email
+              %input#email{:name => "email", :placeholder => "example@domain.com", :required => "", :type => "email"}
+            %li
+              %label{:for => "phone"} Phone
+              %input#phone{:name => "phone", :placeholder => "Eg. +447500000000", :required => "", :type => "tel"}
+        %fieldset
+          %button{:type => "submit"} Facebook!
+      %p    
+        %form#payment    
+          %fieldset
+            %legend Donate Via Credit Card (Coming Soon!)
+            %ol
+              %li
+                %fieldset
+                  %legend Card type
+                  %ol
+                    %li
+                      %input#visa{:name => "cardtype", :type => "radio"}
+                        %label{:for => "visa"} VISA
+                    %li
+                      %input#amex{:name => "cardtype", :type => "radio"}
+                        %label{:for => "amex"} AmEx
+                    %li
+                      %input#mastercard{:name => "cardtype", :type => "radio"}
+                        %label{:for => "mastercard"} Mastercard
+              %li
+                %label{:for => "cardnumber"} Card number
+                %input#cardnumber{:name => "cardnumber", :required => "", :type => "number"}
+              %li
+                %label{:for => "secure"} Security code
+                %input#secure{:name => "secure", :required => "", :type => "number"}
+              %li
+                %label{:for => "namecard"} Name on card
+                %input#namecard{:name => "namecard", :placeholder => "Exact name as on the card", :required => "", :type => "text"}
+          %fieldset
+            %button{:type => "submit"} Support!
+    - else
+      blah
