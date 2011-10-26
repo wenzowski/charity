@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @page.name
+%p
+  %b Slug:
+  = @page.slug
+%p
+  %b Google checkout merchant:
+  = @page.google_checkout_merchant_id
+
+= link_to 'Edit', edit_page_path(@page)
+\|
+= link_to 'Back', pages_path

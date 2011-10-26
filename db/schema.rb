@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111026202247) do
+ActiveRecord::Schema.define(:version => 20111026212916) do
+
+  create_table "pages", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "google_checkout_merchant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages_users", :id => false, :force => true do |t|
+    t.integer "page_id"
+    t.integer "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

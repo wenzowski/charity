@@ -8,6 +8,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
+gem "sluggable"
 gem "haml", ">= 3.1.2"
 gem "haml-rails", ">= 0.3.4", :group => :development
 gem "rspec-rails", ">= 2.6.1", :group => [:development, :test]

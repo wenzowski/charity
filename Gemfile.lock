@@ -173,6 +173,9 @@ GEM
       ffi (= 1.0.9)
       json_pure
       rubyzip
+    sluggable (0.1.1)
+      activerecord (>= 2.1.1)
+      activesupport (>= 2.1.1)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -218,4 +221,5 @@ DEPENDENCIES
   rb-fsevent
   rspec-rails (>= 2.6.1)
   sass-rails (~> 3.1.4)
+  sluggable
   uglifier (>= 1.0.3)

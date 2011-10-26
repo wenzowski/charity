@@ -1,4 +1,6 @@
 Charity::Application.routes.draw do
+  resources :pages
+
   #get \"users\/show\"
 
   root :to => "home#index"
