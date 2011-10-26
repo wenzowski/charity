@@ -12,5 +12,8 @@
   .field
     = f.label "Charity's Google Checkout Merchant ID:"
     = f.text_field :google_checkout_merchant_id
+  .field
+    = f.label :image
+    = f.file_field :image
   .actions
     = f.submit 'Save'
