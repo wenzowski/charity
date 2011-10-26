@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @pages = current_user.pages
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,10 +42,10 @@ class PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
-    @page = Page.new(params[:page])
+    @page = current_user.pages.new(params[:page])
 
     respond_to do |format|
-      if @page.save
+      if current_user.save
         format.html { redirect_to @page, notice: 'Page was successfully created.' }
         format.json { render json: @page, status: :created, location: @page }
       else
