@@ -31,3 +31,6 @@ gem "devise", ">= 1.4.5"
 gem 'jquery-rails'
 gem 'modernizr-rails'
 gem 'rails-backbone', git: 'git://github.com/christopherhein/backbone-rails.git', branch: 'develop'
+
+gem "paperclip", "~> 2.4"
+gem "aws-s3"

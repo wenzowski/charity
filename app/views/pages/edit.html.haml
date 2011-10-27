@@ -2,6 +2,10 @@
 
 = render 'form'
 
+%p
+  Current image:
+  = image_tag @page.image.url
+
 = link_to 'Show', @page
 \|
 = link_to 'Back', pages_path
