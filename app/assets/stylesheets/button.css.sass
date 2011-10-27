@@ -4,9 +4,6 @@
   font-size: 2em
   color: $button-text
 
-.button
-  line-height: 2em
-
 .button, button, input[type="button"], input[type="submit"]
   @include button(shiny, $button-color)
   @include button-text
@@ -19,3 +16,6 @@
 
   &:hover
     @include button-text
+
+.button
+  line-height: 2em
