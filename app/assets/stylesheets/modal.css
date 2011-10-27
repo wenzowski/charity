@@ -1,0 +1,72 @@
+.divModalDialog ul {
+  float:left;
+  width:100%;
+  margin: 0px 0px 20px 0px;
+  padding:0;
+  list-style-type:none;
+}
+.divModalDialog li {display:inline; margin-right:5px;}
+
+.divModalDialog  {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:none;
+  background-color:rgba(0,0,0,0.8);
+  text-align:center;
+  z-index:101;
+}
+
+.divModalDialog:target  { display:block; }
+
+.divModalDialog div  {
+  position:fixed;
+  top:5%;
+  width:100%;
+  height:80%;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  z-index:102;
+}
+
+.divModalDialog div h1  {
+    width:100%;
+    font-size:2em;
+    color:#dadada;
+    z-index:103;
+    /* add shadows to text */
+    -moz-text-shadow: 10px 3px 4px 6px rgba(0,0,0,0.9);
+    -webkit-text-shadow: 3px 4px 6px rgba(0,0,0,0.9);
+    text-shadow: 10px 4px 6px rgba(0,0,0,0.9);
+}
+
+.divModalDialog ul a  {
+  padding:5px;
+  font-size:3em;
+  font-weight:bold;
+  color:Yellow;
+  text-decoration:none;
+  border: solid 1px Gray;
+  border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+  z-index:110;
+}
+
+
+.divModalDialog ul a:hover
+{
+  background:#505050;
+  background: -moz-linear-gradient(top, #eaeaea,
+                                      #505050 50%,
+                                      #303030 50%,
+                                      #404040);
+  background: -webkit-gradient(linear, left top, left bottom,
+                                              from(#eaeaea),
+                                              color-stop(0.5, #505050),
+                                              color-stop(0.5, #303030),
+                                              to(#404040));
+}

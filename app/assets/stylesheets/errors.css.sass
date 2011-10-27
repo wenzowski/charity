@@ -1,0 +1,38 @@
+@import palette
+
+#flash_notice, #flash_error, #flash_alert
+  padding: 5px 8px
+  margin: 10px 0
+  @include border-radius(10px)
+
+#flash_notice
+  background-color: lighten($green, 30%)
+  border: solid 1px $green
+
+#flash_error, #flash_alert
+  background-color: lighten($red, 30%)
+  border: solid 1px $red
+
+.fieldWithErrors
+  display: inline
+
+.error_messages
+  width: 400px
+  border: 2px solid $bright-red
+  padding: 0px
+  padding-bottom: 12px
+  margin-bottom: 20px
+  background-color: $light-gray
+  font-size: 12px
+  h2
+    text-align: left
+    font-weight: bold
+    padding: 5px 10px
+    font-size: 12px
+    margin: 0
+    background-color: $bright-red
+    color: white
+  p
+    margin: 8px 10px
+  ul
+    margin: 0

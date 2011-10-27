@@ -1,5 +1,5 @@
 Charity::Application.routes.draw do
-  resources :pages
+  resources :pages, only: [:index, :new, :edit, :create, :update, :destroy]
 
   #get \"users\/show\"
 

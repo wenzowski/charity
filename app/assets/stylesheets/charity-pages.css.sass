@@ -1,0 +1,34 @@
+@import palette
+
+$charities-margin: 20px
+$charities-width: auto
+$charities-height: 300px
+
+#charities
+  position: relative
+
+  #new-charity
+    position: absolute
+    top: 0
+    right: 0
+
+  .charity
+    display: box
+    width: $charities-width
+    height: $charities-height
+
+.charity
+  position: relative
+  padding: $charities-margin !important
+  @include border-radius($border-radius)
+  border: 3px solid $box-border
+  margin: 0 0 50px
+
+  .page_qr
+    position: absolute
+    top: $charities-margin
+    right: $charities-margin
+    background-color: white
+
+  .page_qr canvas
+    margin: $charities-margin

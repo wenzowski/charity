@@ -12,17 +12,6 @@ class PagesController < ApplicationController
     end
   end
 
-  # GET /pages/1
-  # GET /pages/1.json
-  def show
-    @page = Page.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @page }
-    end
-  end
-
   # GET /pages/new
   # GET /pages/new.json
   def new
@@ -46,7 +35,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if current_user.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
+        format.html { redirect_to pages_path, notice: 'Page was successfully created.' }
         format.json { render json: @page, status: :created, location: @page }
       else
         format.html { render action: "new" }
@@ -62,7 +51,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.update_attributes(params[:page])
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
+        format.html { redirect_to pages_path, notice: 'Page was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

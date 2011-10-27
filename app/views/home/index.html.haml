@@ -1,6 +1,24 @@
-%h1 Charity
-%p This app allows charities to create donation page QR codes for their organization.
+%p
+  This app allows charities to create #{link_to 'QR codes', '#divModalDialog1'} that are linked to a #{link_to 'donation page', '#divModalDialog2'}.
 
-%h3 Some charities in the system:
+%h2 Newest Charities
 - @pages.each do |page|
-  %p Page: #{link_to page.name, "/#{page.slug}"}
+  = link_to page.name, "/#{page.slug}", class: 'button'
+
+#divModalDialog1.divModalDialog
+  %div
+    %h1 Leave this app and read about QR codes?
+    %ul
+      %li
+        %a{:href => "http://en.wikipedia.org/wiki/QR_code"} Go to Wikipedia!
+      %li
+        %a{:href => "#"} Not right now
+
+#divModalDialog2.divModalDialog
+  %div
+    %h1 Leave this app and read about Google Checkout?
+    %ul
+      %li
+        %a{:href => "https://checkout.google.com/seller/npo/"} Go to Google!
+      %li
+        %a{:href => "#"} Not right now

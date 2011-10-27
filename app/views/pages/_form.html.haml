@@ -6,14 +6,32 @@
         - @page.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label 'Charity Name:'
+  %p.field
+    = f.label :name, "What's your charity called?"
+    %br/
     = f.text_field :name
-  .field
-    = f.label "Charity's Google Checkout Merchant ID:"
+  %p.field
+    = f.label :google_checkout_merchant_id, "We'll need your"
+    = link_to 'Google Checkout ID', '#divModalDialog1'
+    %br/
     = f.text_field :google_checkout_merchant_id
-  .field
-    = f.label :image
+  %p.field
+    = f.label :image, 'Use a custom background image?'
+    %br/
     = f.file_field :image
-  .actions
+    %p
+      Current image:
+      = image_tag @page.image.url
+  %p.actions
     = f.submit 'Save'
+  %p.cancel
+    = link_to 'Back', pages_path
+
+#divModalDialog1.divModalDialog
+  %div
+    %h1 Leave this app and read about Google Checkout?
+    %ul
+      %li
+        %a{:href => "https://checkout.google.com/seller/npo/"} Go to Google!
+      %li
+        %a{:href => "#"} Not right now
